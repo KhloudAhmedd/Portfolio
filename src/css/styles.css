@@ -1,0 +1,1252 @@
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
+
+/* ========================================================================== GLOBAL STYLE ========================================================================== */
+html, 
+body {
+  font-family: "Maven Pro", sans-serif;
+  padding-top: 70px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-y: auto;   /* Default vertical scrolling */
+  scroll-behavior: smooth;
+}
+
+
+.full-screen {
+  padding: 8rem 0;
+}
+
+.small-text {
+  color: #5b5b5b;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 50px;
+  letter-spacing: 0.2px;
+}
+
+a {
+  color: #7a60ff;
+  font-weight: normal;
+  text-decoration: none !important;
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  color: #7a60ff !important;
+}
+
+p {
+  /* text-align:justify; */
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #999999;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+h1 {
+  color: #212121;
+  font-size: 2.8em;
+  margin: 24px 0;
+}
+
+h2 {
+  color: #353535;
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
+h3,
+h4 {
+  color: #484848;
+}
+
+h3,
+b,
+strong {
+  font-weight: bold;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.services p,
+#about p,
+.timeline-info p {
+  text-align: justify;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+/* ==========================
+            NAVBAR 
+        =========================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999999;
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+
+/* new 11-10 */
+.navbar-collapse {
+  background: white; /* Ensure background color on collapse for visibility */
+
+}
+
+.navbar[class*="-unpinned"] {
+  transform: translate(0, -150%);
+}
+
+.navbar[class*="-pinned"] {
+  transform: translate(0, 0);
+}
+
+.navbar[class*="headroom--not-top"] {
+  background: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-brand .uil {
+  font-size: 40px;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+  padding: 0 20px;
+}
+
+.nav-link {
+  font-weight: bold;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+.nav-link span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.nav-link span:before {
+  position: absolute;
+  top: 100%;
+  content: attr(data-hover);
+  transform: translate3d(0, 0, 0);
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #7a60ff;
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link:focus span,
+.navbar-light .navbar-nav .nav-link:hover span {
+  transform: translateY(-100%);
+}
+
+.navbar-light .navbar-toggler-icon {
+  background: none;
+}
+
+/* 
+.navbar-light .navbar-toggler{
+  color: rgba(0, 0, 0, 0.149);
+  border-color: rgba(0, 0, 0, .1);
+} */
+
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:first-child {
+  transform: rotate(45deg);
+  top: 6px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(2) {
+  display: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:last-child {
+  transform: rotate(-45deg);
+  bottom: 1px;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background: #212121;
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-link {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .navbar-brand {
+    font-size: 24px;
+  }
+
+  .navbar-toggler {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand .uil {
+    font-size: 28px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .navbar-nav {
+    padding: 5px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0 30px;
+  }
+}
+
+
+
+/* ==========================
+            ABOUT SECTION 
+        ===========================  */
+.animated {
+  position: relative;
+}
+
+.animated-info {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  min-width: 260px;
+  position: relative;
+}
+
+.animated-item {
+  color: #7a60ff;
+  font-size: 38px;
+  line-height: inherit;
+  display: inline-block;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  animation: BottomTotop 6s linear infinite 0s;
+}
+
+.animated-item:nth-child(2n + 2) {
+  animation-delay: 2s;
+}
+
+.animated-item:nth-child(3n + 3) {
+  animation-delay: 4s;
+}
+
+@keyframes BottomTotop {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  30% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.custom-btn {
+  background: #eee;
+  color: #5b5b5b;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 13px 29px;
+  font-size: 14px;
+  line-height: normal;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.custom-btn:hover {
+  color: #7a60ff;
+}
+
+.custom-btn.custom-btn-bg {
+  background: #474559;
+  color: #ffffff;
+}
+
+.custom-btn.custom-btn-bg:hover {
+  background: #7a60ff;
+  color: #ffffff !important;
+}
+
+
+/* COLOR MODE  */
+.color-mode {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.color-mode-icon {
+  position: relative;
+  right: 6px;
+}
+
+
+
+/* ==========================
+            SERVICES SECTION START
+        =========================== */
+.services {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.services .icon {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 180px;
+  font-size: 56px;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  margin-bottom: 40px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  border: 1px solid #7a60ff;
+  color: #7a60ff;
+}
+
+.services .item:hover .icon {
+  background: #7a60ff;
+  border: 1px solid #7a60ff;
+}
+
+.services .item [class*="fa"] {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.services .item:hover [class*="fa"] {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  color: #fff;
+}
+
+i.respons {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin: 0 auto;
+  line-height: 35px;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  border: 1px solid #cccccc;
+  color: #cccccc;
+}
+
+.drop {
+  margin-top: 50px;
+}
+
+.drop a{
+ color: #7a60ff; 
+  font-weight: bold;
+  font-size: 30px;
+  display: inline;
+}
+
+/* ==========================
+        SKILLS SECTION START new 6-10-2024
+        =========================== */
+.skills-section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #1a202c;
+}
+
+.skill-card {
+  background-color: #F3F5F8;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.skill-card:hover {
+  box-shadow: 0 14px 28px #7a60ff, 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #4a5568;
+}
+
+.skill-name {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #2d3748;
+}
+
+.skill-level-wrapper {
+  background-color: #edf2f7;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+/* ==========================
+        Tools SECTION START
+        =========================== */
+
+.dark-box {
+  backdrop-filter: blur(10px);
+  background: #F3F5F8;
+  -webkit-box-shadow: 0px 3px 0px 0px #7a60ff;
+  -moz-box-shadow: 0px 3px 0px 0px #7a60ff;
+  box-shadow: 0px 3px 0px 0px #7a60ff;
+  padding: 20px 0;
+}
+
+.dark-box:hover,
+.dark-box:focus {
+  -webkit-box-shadow: 0px 3px 0px 0px black;
+  -moz-box-shadow: 0px 3px 0px 0px black;
+  box-shadow: 0px 3px 0px 0px black;
+}
+
+.box-hover {
+  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+}
+
+.box-hover:hover,
+.box-hover:focus {
+  transform: translate(0, -15px);
+  -webkit-transform: translate(0, -15px);
+  -ms-transform: translate(0, -15px);
+}
+
+
+/* ==========================
+            Dark Mode Styles 
+        =========================== */
+
+body.dark-mode .dark-box {
+  background: rgb(41, 41, 41);
+  /* Transparent card background */
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #7a60ff;
+  backdrop-filter: blur(10px);
+}
+
+body.dark-mode .dark-box:hover,
+body.dark-mode .dark-box:focus {
+  background: rgba(0, 0, 0, 0.167);
+}
+
+body.dark-mode h2::after,
+body.dark-mode .up-btn:hover,
+body.dark-mode .up-btn:focus {
+  border-color: #7a60ff;
+  /* Change after element borders */
+}
+
+body.dark-mode .box-hover:hover,
+body.dark-mode .box-hover:focus {
+  transform: translate(0, -15px);
+  -webkit-transform: translate(0, -15px);
+  -ms-transform: translate(0, -15px);
+}
+
+/* Light Mode Styles */
+.dark-box span.skill-title {
+  color: inherit;
+  /* Default color for these spans in light mode */
+}
+
+/* ==========================
+    PROJECTS SECTION 
+    =========================== */
+/* General carousel arrow styles (no background, bigger arrows) */
+/* General carousel arrow styles for larger screens */
+.carousel-control-prev, .carousel-control-next {
+  width: 7%; /* Increase width for larger clickable area */
+  top: 0;
+  bottom: 0;
+  background: none; /* No background color */
+  z-index: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 40px; /* Increase size of the arrow */
+  height: 40px; /* Increase size of the arrow */
+  background-image: none; /* Remove default background image */
+  border: none; /* Remove any border */
+  font-size: 80px; /* Increase font size */
+}
+
+/* Assign default arrow color */
+.carousel-control-prev-icon:before,
+.carousel-control-next-icon:before {
+  content: '‹'; /* Left arrow icon */
+  color: #000; /* Default black color */
+}
+
+.carousel-control-next-icon:before {
+  content: '›'; /* Right arrow icon */
+}
+
+.carousel-control-prev {
+  left: -5%; /* Move arrow to the very edge */
+}
+
+.carousel-control-next {
+  right: -5%; /* Move arrow to the very edge */
+}
+
+/* Dark mode arrows */
+body.dark-mode .carousel-control-prev-icon:before,
+body.dark-mode .carousel-control-next-icon:before {
+  color: #fff; /* White arrows in dark mode */
+}
+
+/* MEDIA QUERIES FOR RESPONSIVE ARROWS */
+
+/* For medium-sized screens (tablets, 768px and up) */
+@media (max-width: 992px) {
+  .carousel-control-prev, .carousel-control-next {
+    width: 10%; /* Increase clickable area on tablets */
+  }
+
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 30px;
+    height: auto;
+    font-size: 60px; /* Slightly smaller arrows */
+  }
+}
+
+/* For small screens (phones, 576px and up) */
+@media (max-width: 576px) {
+  .carousel-control-prev, .carousel-control-next {
+    width: 10%; /* Increase width for smaller screens */
+  }
+
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 25px; 
+    height: auto;
+    font-size: 50px; /* Smaller arrows for mobile */
+  }
+
+  .carousel-control-prev {
+    left: -3%; /* Adjust position for smaller screens */
+  }
+
+  .carousel-control-next {
+    right: -3%; /* Adjust position for smaller screens */
+  }
+}
+
+
+/* ==========================
+RESUME SECTION START
+===========================  */
+
+.timeline-wrapper {
+  position: relative;
+  padding: 22px 0;
+}
+
+.timeline-wrapper:last-child:before {
+  height: 0;
+}
+
+.timeline-wrapper:before {
+  content: "";
+  background: #474559;
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  left: 38px;
+}
+
+.timeline-yr {
+  background: #474559;
+  border-radius: 100%;
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.timeline-yr span {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  line-height: 75px;
+}
+
+.timeline-info {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 432px;
+  margin-left: 6em;
+}
+
+.timeline-info small {
+  color: #474559;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+
+/* ==========================
+CONTACT SECTION 
+=========================== */
+.contact-form {
+  position: relative;
+}
+
+.contact-form .form-control {
+  background: transparent;
+  border-radius: 2px;
+  outline: none;
+  box-shadow: none;
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+.contact-form .form-control:not(textarea) {
+  height: 48px;
+}
+
+.contact-form .form-control:hover,
+.contact-form .form-control:focus {
+  border-color: #7a60ff;
+}
+
+.contact-form .submit-btn {
+  background: #7a60ff;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.contact-form .submit-btn:hover {
+  background: #474559;
+}
+
+.contact-info {
+  background: #474559;
+  border-radius: 0 0 3px 3px;
+  position: relative;
+  bottom: 8px;
+}
+
+.contact-info p,
+.contact-info a {
+  color: #f7f3f3;
+}
+
+.social-links .uil {
+  color: #f7f3f3;
+  font-size: 20px;
+  display: block;
+  margin: 5px 0;
+}
+
+.social-links .uil:hover {
+  color: #7a60ff;
+}
+
+@media (min-width: 1270px) {
+  .owl-theme .owl-dots {
+    position: relative;
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  .full-screen {
+    padding-bottom: 4rem;
+  }
+
+  .color-mode {
+    display: none;
+  }
+
+  .about-image {
+    margin-top: 4em;
+  }
+
+  .mobile-mt-2,
+  .contact-form {
+    margin-top: 2em;
+  }
+
+  .contact-info {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2.4em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  .animated-item {
+    font-size: 28px;
+  }
+
+  .navbar-collapse {
+    /* background: #ffffff; */
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .navbar-expand-sm .navbar-nav .nav-link {
+    padding: 3px 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .animated-info {
+    min-width: 200px;
+  }
+
+  .animated-item {
+    font-size: 30px;
+  }
+
+  .custom-btn-group {
+    text-align: center;
+  }
+
+  .custom-btn {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .owl-theme .owl-nav {
+    display: none;
+  }
+
+  .timeline-info small {
+    display: block;
+    margin: 10px 0 0 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .animated-text {
+    margin-top: 0;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .full-screen {
+    padding: 4rem 0;
+  }
+
+  .mobile-block {
+    display: block;
+  }
+
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .social-links li {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+/* ==========================
+      CONTACT FORM SECTION 
+      =========================== */
+
+#contact_form .form-input {
+  border: 1px solid #e4e4e4;
+}
+
+input {
+  height: 42px;
+  padding: 0 1rem;
+  background: #fff;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: 0;
+}
+
+#contact_form textarea {
+  resize: none;
+  padding: 1rem;
+  height: 280px;
+  background: #fff;
+  border: 0;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.btn-grad {
+  padding: 0.7rem 2rem;
+  display: inline-block;
+  color: #fff;
+  border-radius: 2rem;
+  border: 0;
+  background: #7a60ff;
+  background: linear-gradient(to left, #7a60ff, #cd9ffa);
+  cursor: pointer;
+}
+
+.contact-info {
+  padding: 2rem 2rem 1rem;
+  border-radius: 8px;
+  background: #7a60ff;
+  background: linear-gradient(to left, #7a60ff, #cd9ffa);
+}
+
+.contact-item {
+  margin: 23px 0px;
+}
+
+.contact-item i {
+  font-size: 20px;
+}
+
+.contact-item p {
+  line-height: 20px;
+  margin: 0;
+}
+
+
+/* ==========================
+      SOCIAL BUTTONS
+      =========================== */
+
+ul.social-buttons {
+  list-style: none;
+  margin: 50px;
+  padding: 0;
+  text-align: center;
+  /* Center the list items horizontally */
+}
+
+ul.social-buttons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+ul.social-buttons li:last-child {
+  margin-right: 0;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  background: #7a60ff;
+  display: inline-block;
+  color: #fff;
+  font-size: 17px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0;
+  /* Remove margin-left */
+}
+
+.social-btn:hover,
+.social-btn:focus {
+  background: #fff;
+  color: #7a60ff;
+}
+
+
+/* ==========================================================================iPhone Section========================================================================== */
+.iphone {
+  width: 50%;
+  background: #f3f5f8;
+  float: left;
+  height: 100%;
+  box-shadow: inset -15px -11px 40px -6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset -15px -11px 40px -6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset -15px -11px 40px -6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.fluid-white {
+  width: 50%;
+  background: #fff;
+  float: right;
+  height: 100%;
+  z-index: 2;
+}
+
+.responsive-services {
+  position: relative;
+}
+
+
+/* ==========================
+FOOTER 
+=========================== */
+.copyright-text {
+  font-size: 16px;
+  font-weight: normal;
+  display: block;
+}
+
+
+
+/* ===============================
+DARK MODE STYLES
+=============================== */
+.dark-mode {
+  background: #0c0c0d;
+}
+
+.dark-mode .navbar-toggler .navbar-toggler-icon {
+  background-color: white;
+}
+
+.color-mode-icon:after {
+  font-family: "unicons";
+  content: "\ea9f";
+  font-size: 30px;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.color-mode-icon.active:after {
+  font-family: "unicons";
+  content: "\eb65";
+  font-size: 30px;
+  color: #ffffff;
+}
+
+
+
+.dark-mode .navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .navbar-light .navbar-nav .nav-link:hover {
+  color: #7a60ff;
+}
+
+.dark-mode .navbar[class*="headroom--not-top"] {
+  background: #0c0c0d;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.dark-mode .small-text {
+  background: #0d0c15;
+  color: #ffffff;
+}
+
+.dark-mode .feature-card .uil,
+.dark-mode .navbar-light .navbar-brand,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode .color-mode {
+  color: #ffffff;
+}
+
+
+/* Dark Mode Styles for Skills Cards */
+
+.dark-mode .section-title {
+  color: #e2e8f0;
+}
+
+.dark-mode .skill-card {
+  background-color: #1d1d1d;
+  box-shadow: 0 1px 3px #7a60ff, 0 1px 2px rgba(255, 255, 255, 0.24);
+}
+
+.dark-mode .skill-card:hover {
+  box-shadow: 0 14px 28px #7a60ff, 0 10px 10px rgba(255, 255, 255, 0.22);
+}
+
+.dark-mode .skill-icon {
+  color: #cbd5e0;
+}
+
+.dark-mode .skill-name {
+  color: #e2e8f0;
+}
+
+/* Dark Mode Styles for Projects Section */
+.dark-mode .owl-carousel .owl-nav button.owl-next,
+.dark-mode .owl-carousel .owl-nav button.owl-prev,
+.dark-mode .owl-carousel button.owl-dot {
+  color: #ffffff;
+}
+
+body.dark-mode .dark-box span.skill-title {
+  color: #7a60ff;
+  /* Change these specific spans to #7a60ff in dark mode */
+}
+
+/*  Dark Mode Styling for Background Elements */
+body.dark-mode .dark-box {
+  background: rgba(18, 18, 18, 0.6);
+  /* Transparent background with backdrop effect */
+  backdrop-filter: blur(10px);
+  /* Apply backdrop filter */
+  border: 2px solid #7a60ff;
+  /* Border color change for dark mode */
+}
+
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  display: none;
+  /* Hide error messages by default */
+  margin-top: 5px;
+}
+
+/* ===================================new styles 5-10-2024 ========================================*/
+/* Dark Mode Styling for All Screens */
+.color-mode {
+  display: block !important;
+  /* Ensure visibility on all screens */
+  position: relative;
+  cursor: pointer;
+  margin-right: 20px;
+  /* Add spacing for mobile screens */
+}
+
+.color-mode-icon {
+  font-size: 30px;
+  color: #474559;
+  /* Default color */
+  transition: all 0.3s ease;
+}
+
+.color-mode-icon.active {
+  color: #7a60ff;
+  /* Change color for active dark mode */
+}
+
+/* Dark Mode Icon for Smaller Screens */
+@media (max-width: 991px) {
+  .color-mode {
+    display: flex !important;
+    /* Ensure the icon shows on smaller screens */
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* Center-align on smaller devices */
+  }
+
+  .color-mode-icon {
+    font-size: 26px;
+    /* Slightly reduce icon size for mobile screens */
+  }
+}
+
+/* Dark Mode Specific Styles for Mobile */
+@media (max-width: 576px) {
+  .dark-mode .navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    /* Lighter text in dark mode */
+  }
+
+  .dark-mode .navbar-light .navbar-brand {
+    color: #ffffff;
+    /* Change brand color in dark mode */
+  }
+
+  .dark-mode .color-mode-icon.active {
+    color: #ffffff;
+    /* Change icon color when dark mode is active */
+  }
+}
+
+/* General Dark Mode Styling */
+body.dark-mode {
+  background: #0c0c0d;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff;
+}
+
+body.dark-mode p,
+body.dark-mode .small-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* body.dark-mode .navbar {
+  background: #212121; /* Dark background for navbar 
+  border-bottom: 1px solid #444; /* Change border color 
+} */
+
+body.dark-mode .navbar-light .navbar-nav .nav-link:hover {
+  color: #7a60ff;
+  /* Navbar link hover color */
+}
+
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  /* Navbar link color in dark mode */
+}
+
+
+/* Dark mode Sweat Alert */
+#swal2-title {
+  color: #0d0c15;
+
+}
+
+
+/* new 11-10 */
+.dark-mode .navbar{
+  background-color: #000;
+}
+.dark-mode .navbar-collapse {
+  background: #0e0e0e; /* Ensure background color on collapse for visibility */
+
+}

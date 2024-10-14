@@ -1,0 +1,36 @@
+<!-- app.component.html -->
+<section class="project py-5" id="project">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-11 text-center mx-auto col-12">
+
+                <div class="col-lg-8 mx-auto">
+                    <h2>My Recent Projects</h2>
+                </div>
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" >
+                    <div class="carousel-inner">
+                        <div *ngFor="let item of items; let i = index" class="carousel-item" [class.active]="i === 0">
+                            <img [src]="item.image" class="d-block w-100" [alt]="item.altText">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>{{ item.title }}</h5>
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
